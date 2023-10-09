@@ -57,15 +57,39 @@ namespace DataAccessLayer
             while (dr2.Read())
             {
                 EntitySecim ent = new EntitySecim();
-                ent.ATEKNO = short.Parse(dr2["ATEKNO"].ToString());
-                ent.BTEKNO = short.Parse(dr2["BTEKNO"].ToString());
-                ent.CTEKNO = short.Parse(dr2["CTEKNO"].ToString());
-                ent.DTEKNO = short.Parse(dr2["DTEKNO"].ToString());
-                ent.ETEKNO = short.Parse(dr2["ETEKNO"].ToString());
+                ent.ATEKNO = short.Parse(dr2[0].ToString());
+                ent.BTEKNO = short.Parse(dr2[1].ToString());
+                ent.CTEKNO = short.Parse(dr2[2].ToString());
+                ent.DTEKNO = short.Parse(dr2[3].ToString());
+                ent.ETEKNO = short.Parse(dr2[4].ToString());
                 Sonuclar.Add(ent);
             }
             dr2.Close();
             return Sonuclar;
+        }
+
+        public static List<EntitySecim> IlceSonucGetir(string ilce)
+        {
+            List<EntitySecim> IlceSonuclar = new List<EntitySecim>();
+            SqlCommand komut = new SqlCommand("SELECT * FROM TBLILCE WHERE ILCEAD=@P1", Baglanti.Conn);
+            if (komut.Connection.State != ConnectionState.Open)
+            {
+                komut.Connection.Open();
+            }
+            komut.Parameters.AddWithValue("@P1",ilce);
+            SqlDataReader dr3 = komut.ExecuteReader();
+            while (dr3.Read())
+            {
+                EntitySecim ent = new EntitySecim();
+                ent.ATEKNO = short.Parse(dr3[2].ToString());
+                ent.BTEKNO = short.Parse(dr3[3].ToString());
+                ent.CTEKNO = short.Parse(dr3[4].ToString());
+                ent.DTEKNO = short.Parse(dr3[5].ToString());
+                ent.ETEKNO = short.Parse(dr3[6].ToString());
+                IlceSonuclar.Add(ent);
+            }
+            dr3.Close();
+            return IlceSonuclar;
         }
     }
 }

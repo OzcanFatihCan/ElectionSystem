@@ -36,6 +36,18 @@ namespace LogicLayer
         {
             return DALSecim.SonucGetir();
         }
+        public static List<EntitySecim> LLIlceSonuclar(string ilce)
+        {
+            if (ilce!="")
+            {
+                return DALSecim.IlceSonucGetir(ilce);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
 
     }
 }

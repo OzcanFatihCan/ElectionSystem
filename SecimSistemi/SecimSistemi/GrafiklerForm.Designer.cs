@@ -66,7 +66,7 @@
             this.groupBox1.Size = new System.Drawing.Size(760, 282);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Sonuçlar";
+            this.groupBox1.Text = "Genel Sonuçlar";
             // 
             // chart1
             // 
@@ -259,6 +259,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(206, 27);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // GrafiklerForm
             // 

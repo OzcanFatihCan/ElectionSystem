@@ -22,4 +22,5 @@ namespace EntityLayer
         public short DTEKNO { get => dTEKNO; set => dTEKNO = value; }
         public short ETEKNO { get => eTEKNO; set => eTEKNO = value; }
     }
+ 
 }
