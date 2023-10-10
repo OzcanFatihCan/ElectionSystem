@@ -7,7 +7,8 @@ Uygulama mimari katmana uygun şekilde geliştirilmiştir. SQL Servisi ile ilgil
 
 DB üzerinde oluşturulan tablonun modeli Entity katmanındadır. 
 
-Uygulamanın çalışabilmesi için MSSQL'e dosyalar arasında bulunan DB yedeği dahil edilmelidir.
+Uygulamanın çalışabilmesi için MSSQL'e dosyalar arasında bulunan DB yedeği dahil edilmelidir. DB yedeği backup ile oluşturulmuştur. 
+Database sağ tık Restore Database seçeneği ile açılan sayfada device kısmından indirilen backupı MSSQL'e dahil edebilirsiniz.
 
 ![image](https://github.com/OzcanFatihCan/ElectionSystem/assets/93872480/563db761-c572-419d-b1d3-4beb10dcc192)
 ![image](https://github.com/OzcanFatihCan/ElectionSystem/assets/93872480/d4d91ff8-eee5-43f2-82e8-ed1c48cab2a9)
